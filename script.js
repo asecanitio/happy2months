@@ -534,9 +534,9 @@ document.addEventListener("DOMContentLoaded", () => {
     // Taruh file lagu di folder "Music/" lalu isi daftar ini.
     // ==========================================
     const PLAYLIST = [
-        { title: "Ah", artist: "Nadin Amizah", src: "music/Nadin Amizah - Ah.mp3" },
-        { title: "Hanya Untukmu", artist: "Ten2Five", src: "music/Ten2Five - Hanya Untukmu.mp3" },
-        { title: "Berdua Saja", artist: "Payung Teduh", src: "music/Berdua Saja.mp3" }
+        { title: "Ah", artist: "Nadin Amizah", src: "Nadin Amizah - Ah.mp3" },
+        { title: "Hanya Untukmu", artist: "Ten2Five", src: "Ten2Five - Hanya Untukmu.mp3" },
+        { title: "Berdua Saja", artist: "Payung Teduh", src: "Berdua Saja.mp3" }
     ];
 
     function buildMusicPlayer() {
