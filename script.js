@@ -479,19 +479,23 @@ document.addEventListener("DOMContentLoaded", () => {
         sendBtn.disabled = true;
         let savedOnline = false;
 
-        try {
+                try {
             if (supabaseClient) {
                 const { data, error } = await supabaseClient
                     .from("comments")
                     .insert([{ letter_id: letterId, user_name: profileValue, comment_text: commentText }])
                     .select();
 
+                if (error) console.error("Supabase error:", error);
+
                 if (!error && data && data.length > 0) {
                     renderCommentUI(listContainer, data[0].user_name, data[0].comment_text, data[0].created_at, true);
                     savedOnline = true;
                 }
+            } else {
+                console.error("supabaseClient null, library belum ke-load");
             }
-        } catch { /* fallback di bawah */ }
+        } catch (err) { console.error("Supabase exception:", err); }
 
         if (!savedOnline) {
             const now = new Date();
