@@ -1,0 +1,1753 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NonaAve Grand Prix</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Quicksand:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+</head>
+<body>
+
+<div class="telemetry-bar">
+  <div class="telemetry-block left-block">
+    <span class="label">DRIVER</span>
+    <div class="driver-content">
+      <img src="Image/Ferrari.png" class="ferrari-logo" alt="Ferrari">
+      <span class="value">MERONA</span>
+    </div>
+  </div>
+  <div class="telemetry-block right-block">
+    <span class="label">STATUS</span>
+    <span class="value active-red">PIT STOP ACTIVE</span>
+  </div>
+</div>
+
+<div class="noise"></div>
+
+<!-- =========================
+     LANDING PAGE
+========================== -->
+<section id="home" class="page active">
+    <div class="home-content">
+        <h1>Happy 2 Months, My Favorite Driver!</h1>
+        <p class="intro">
+            You've made it through another lap with me, sayang! :D<br>
+            Now, come see what's waiting in the pit lane! ˃ 𖥦 ˂
+        </p>
+        
+        <!-- Animasi Lintasan & Mobil Ferrari Loop -->
+        <div class="track-container">
+            <div class="ferrari-car">🏎️</div>
+            <div class="asphalt-line"></div>
+        </div>
+
+        <button class="enter-btn" id="enterBtn">
+           BOX, BOX!
+        </button>
+    </div>
+</section>
+
+<!-- =========================
+     LETTER INDEX
+========================== -->
+<main id="indexPage" class="page">
+    <div class="index-container">
+        <div class="index-header">
+            <h2>
+                Open When
+                <i>You Find Yourself</i>
+                Here :)
+            </h2>
+        </div>
+
+        <!-- FILTER ARCHIVE LAPS -->
+        <div class="filter-container">
+            <button class="filter-btn active" data-filter="all">ALL LAPS</button>
+            <button class="filter-btn" data-filter="lap1">LAP 1</button>
+            <button class="filter-btn" data-filter="lap2">LAP 2</button>
+            <button class="filter-btn" data-filter="lap3">LAP 3</button>
+            <button class="filter-btn" data-filter="lap4">LAP 4</button>
+            <button class="filter-btn" data-filter="lap5">LAP 5</button>
+            <button class="filter-btn" data-filter="lap6">LAP 6</button>
+            <button class="filter-btn" data-filter="lap7">LAP 7</button>
+        </div>
+
+        <div class="letter-list">
+            <!-- LAP 1 -->
+            <button class="letter-item" data-letter="letter1" data-category="lap1">
+                <span class="letter-number">01</span>
+                <div class="letter-info">
+                    <span class="letter-title">Open when you get this</span>
+                    <span class="letter-desc">a little something, meant to find you.</span>
+                </div>
+                <span class="letter-arrow">↗</span>
+            </button>
+
+            <button class="letter-item" data-letter="letter2" data-category="lap1">
+                <span class="letter-number">02</span>
+                <div class="letter-info">
+                    <span class="letter-title">6 Reasons why I love you</span>
+                    <span class="letter-desc">six things I quietly adore about you!</span>
+                </div>
+                <span class="letter-arrow">↗</span>
+            </button>
+
+            <!-- LAP 2 -->
+            <button class="letter-item" data-letter="letter3" data-category="lap2">
+                <span class="letter-number">03</span>
+                <div class="letter-info">
+                    <span class="letter-title">Open when you feel happy</span>
+                    <span class="letter-desc">for the days when everything feels a little brighter.</span>
+                </div>
+                <span class="letter-arrow">↗</span>
+            </button>
+
+            <button class="letter-item" data-letter="letter4" data-category="lap2">
+                <span class="letter-number">04</span>
+                <div class="letter-info">
+                    <span class="letter-title">Open when you feel bored</span>
+                    <span class="letter-desc">for the quiet moments that need filling.</span>
+                </div>
+                <span class="letter-arrow">↗</span>
+            </button>
+
+            <button class="letter-item" data-letter="letter5" data-category="lap2">
+                <span class="letter-number">05</span>
+                <div class="letter-info">
+                    <span class="letter-title">Open when you forget how I look like</span>
+                    <span class="letter-desc">a face you might want to keep around.</span>
+                </div>
+                <span class="letter-arrow">↗</span>
+            </button>
+
+            <!-- LAP 3 -->
+            <button class="letter-item" data-letter="letter6" data-category="lap3">
+                <span class="letter-number">06</span>
+                <div class="letter-info">
+                    <span class="letter-title">Open when you want to remember the night we met</span>
+                    <span class="letter-desc">a little piece of where it all began.</span>
+                </div>
+                <span class="letter-arrow">↗</span>
+            </button>
+
+            <button class="letter-item" data-letter="letter7" data-category="lap3">
+                <span class="letter-number">07</span>
+                <div class="letter-info">
+                    <span class="letter-title">Open when you miss me</span>
+                    <span class="letter-desc">for when you wish I were there.</span>
+                </div>
+                <span class="letter-arrow">↗</span>
+            </button>
+
+            <button class="letter-item" data-letter="letter8" data-category="lap3">
+                <span class="letter-number">08</span>
+                <div class="letter-info">
+                    <span class="letter-title">Open when you can't sleep</span>
+                    <span class="letter-desc">a little something for your restless hours.</span>
+                </div>
+                <span class="letter-arrow">↗</span>
+            </button>
+
+            <!-- LAP 4 -->
+            <button class="letter-item" data-letter="letter9" data-category="lap4">
+                <span class="letter-number">09</span>
+                <div class="letter-info">
+                    <span class="letter-title">Open when you have a nightmare</span>
+                    <span class="letter-desc">a little light for the darker hours.</span>
+                </div>
+                <span class="letter-arrow">↗</span>
+            </button>
+
+            <button class="letter-item" data-letter="letter10" data-category="lap4">
+                <span class="letter-number">10</span>
+                <div class="letter-info">
+                    <span class="letter-title">Open when you feel sad</span>
+                    <span class="letter-desc">for when the world feels a little heavier.</span>
+                </div>
+                <span class="letter-arrow">↗</span>
+            </button>
+
+            <button class="letter-item" data-letter="letter11" data-category="lap4">
+                <span class="letter-number">11</span>
+                <div class="letter-info">
+                    <span class="letter-title">Open when you are having a bad day</span>
+                    <span class="letter-desc">tomorrow might feel a little lighter!</span>
+                </div>
+                <span class="letter-arrow">↗</span>
+            </button>     
+
+            <button class="letter-item" data-letter="letter12" data-category="lap4">
+                <span class="letter-number">12</span>
+                <div class="letter-info">
+                    <span class="letter-title">Open when you feel stressed out</span>
+                    <span class="letter-desc">when your mind feels a little too full.</span>
+                </div>
+                <span class="letter-arrow">↗</span>
+            </button>    
+
+            <button class="letter-item" data-letter="letter13" data-category="lap4">
+                <span class="letter-number">13</span>
+                <div class="letter-info">
+                    <span class="letter-title">Open when you feel nervous</span>
+                    <span class="letter-desc">when your heart is racing ahead of you.</span>
+                </div>
+                <span class="letter-arrow">↗</span>
+            </button>  
+
+            <button class="letter-item" data-letter="letter14" data-category="lap4">
+                <span class="letter-number">14</span>
+                <div class="letter-info">
+                    <span class="letter-title">Open when you are crying</span>
+                    <span class="letter-desc">when the tears say what words cannot.</span>
+                </div>
+                <span class="letter-arrow">↗</span>
+            </button>  
+
+            <button class="letter-item" data-letter="letter15" data-category="lap4">
+                <span class="letter-number">15</span>
+                <div class="letter-info">
+                    <span class="letter-title">Open when you are sick</span>
+                    <span class="letter-desc">for the days when your body needs a little more rest.</span>
+                </div>
+                <span class="letter-arrow">↗</span>
+            </button>  
+
+            <!-- LAP 5 -->
+            <button class="letter-item" data-letter="letter16" data-category="lap5">
+                <span class="letter-number">16</span>
+                <div class="letter-info">
+                    <span class="letter-title">Open when you need some love</span>
+                    <span class="letter-desc">for when you need a little warmth.</span>
+                </div>
+                <span class="letter-arrow">↗</span>
+            </button>  
+
+            <button class="letter-item" data-letter="letter17" data-category="lap5">
+                <span class="letter-number">17</span>
+                <div class="letter-info">
+                    <span class="letter-title">Open when you need someone who cares</span>
+                    <span class="letter-desc">when you need a reminder that someone cares.</span>
+                </div>
+                <span class="letter-arrow">↗</span>
+            </button>  
+
+            <button class="letter-item" data-letter="letter18" data-category="lap5">
+                <span class="letter-number">18</span>
+                <div class="letter-info">
+                    <span class="letter-title">Open when you need encouragement</span>
+                    <span class="letter-desc">for when taking the next step feels a little harder.</span>
+                </div>
+                <span class="letter-arrow">↗</span>
+            </button>  
+
+            <button class="letter-item" data-letter="letter19" data-category="lap5">
+                <span class="letter-number">19</span>
+                <div class="letter-info">
+                    <span class="letter-title">Open when you need to know how much I love you</span>
+                    <span class="letter-desc">more than these words could ever hold! (˶ˆᗜˆ˵)</span>
+                </div>
+                <span class="letter-arrow">↗</span>
+            </button>  
+
+            <!-- LAP 6 -->
+            <button class="letter-item" data-letter="letter20" data-category="lap6">
+                <span class="letter-number">20</span>
+                <div class="letter-info">
+                    <span class="letter-title">Open when you think I am upset at you</span>
+                    <span class="letter-desc">for when my silence feels heavier than it should.</span>
+                </div>
+                <span class="letter-arrow">↗</span>
+            </button>  
+
+            <button class="letter-item" data-letter="letter21" data-category="lap6">
+                <span class="letter-number">21</span>
+                <div class="letter-info">
+                    <span class="letter-title">Open when you are annoyed with me</span>
+                    <span class="letter-desc">when we need a little room to breathe.</span>
+                </div>
+                <span class="letter-arrow">↗</span>
+            </button> 
+
+            <button class="letter-item" data-letter="letter22" data-category="lap6">
+                <span class="letter-number">22</span>
+                <div class="letter-info">
+                    <span class="letter-title">Open when we haven't talked all day</span>
+                    <span class="letter-desc">for a day that feels incomplete without our little conversations.</span>
+                </div>
+                <span class="letter-arrow">↗</span>
+            </button> 
+
+            <button class="letter-item" data-letter="letter23" data-category="lap6">
+                <span class="letter-number">23</span>
+                <div class="letter-info">
+                    <span class="letter-title">Open when we've had an argument</span>
+                    <span class="letter-desc">for when we need to find our way back.</span>
+                </div>
+                <span class="letter-arrow">↗</span>
+            </button>
+
+            <button class="letter-item" data-letter="letter24" data-category="lap6">
+                <span class="letter-number">24</span>
+                <div class="letter-info">
+                    <span class="letter-title">Open when you need reassurance</span>
+                    <span class="letter-desc">when you need to know I'm still here.</span>
+                </div>
+                <span class="letter-arrow">↗</span>
+            </button>
+
+            <button class="letter-item" data-letter="letter25" data-category="lap6">
+                <span class="letter-number">25</span>
+                <div class="letter-info">
+                    <span class="letter-title">Open when you feel like we're drifting apart</span>
+                    <span class="letter-desc">for when the distance feels a little too real.</span>
+                </div>
+                <span class="letter-arrow">↗</span>
+            </button>
+
+            <!-- LAP 7 -->
+            <button class="letter-item" data-letter="letter26" data-category="lap7">
+                <span class="letter-number">26</span>
+                <div class="letter-info">
+                    <span class="letter-title">Open when this is your last letter</span>
+                    <span class="letter-desc">a little ending, meant to stay with you.</span>
+                </div>
+                <span class="letter-arrow">↗</span>
+            </button>
+        </div>
+
+        <button class="back-home" id="backHome">
+            ← back
+        </button>
+    </div>
+</main>
+
+<!-- =========================
+     LETTER 01
+========================== -->
+<section id="letter1" class="letter-page">
+    <div class="letter-wrapper">
+        <div class="letter-top">
+            <span>01 / 26</span>
+            <span>Open when you get this</span>
+        </div>
+        <article class="paper">
+            <p class="letter-date">11/9</p>
+            <h2>Teruntuk kekasih hatiku, Merona.</h2>
+            <p>Kalau kamu sedang membaca surat ini, syukurlah, berarti surat-surat kecilku ini akhirnya tersampaikan kepada yang berhak menerimanya.</p>
+            <p>Aku membuat surat-surat ini untuk memberitahu kepadamu, dindaku, bahwa ada seseorang nun jauh di sana yang masih memperhatikan serta menyayangimu selalu.</p>
+            <p>Walau aku tak bisa selalu berada di sampingmu untuk menemani setiap keadaanmu, aku harap dengan adanya bagian dari versiku yang kutulis di sini, kamu bisa selalu merasakan kehadiranku di setiap langkahmu. Ada surat yang bisa kamu baca ketika sedih, ketika rindu, ketika bahagia, ketika semuanya terasa terlalu berat, atau ketika kamu hanya membutuhkan sedikit rasa kasih sayang.</p>
+            <p>Kamu nggak perlu membukanya secara berurutan, ikuti saja kata hatimu. Ketika kamu sedang merasakan suatu keadaan, bukalah surat yang mungkin paling kamu butuhkan saat itu. Dan kalau kamu merasa perlu, kamu juga bisa membacanya berulang kali. Atau, jika perlu, aku akan membuat pembaruan setiap sebulan sekali.</p>
+            <p>Setelah kamu membaca semuanya, aku harap kamu menemukan satu hal yang sama di setiap surat; bahwa di balik setiap kata, selalu ada aku yang sedang memilih untuk menyayangimu, selalu.</p>
+            <p class="signature">Dari seseorang yang beruntung bisa mengenalmu, <br><i>Asena.</i></p>
+        </article>
+
+        <div class="comment-section">
+            <div class="comment-header">
+                <span class="radio-badge">TEAM RADIO</span>
+                <h3>DRIVER RESPONSE</h3>
+            </div>
+            <div class="comment-list" id="commentList-letter1"></div>
+            <div class="comment-form">
+                <textarea id="commentInput-letter1" placeholder="Type your reply to pit wall..."></textarea>
+                <div class="form-actions">
+                    <div class="profile-selector">
+                        <label class="profile-option">
+                            <input type="radio" name="profile-letter1" value="MER" checked>
+                            <span class="custom-radio mer">MER</span>
+                        </label>
+                        <label class="profile-option">
+                            <input type="radio" name="profile-letter1" value="AVE">
+                            <span class="custom-radio ave">AVE</span>
+                        </label>
+                    </div>
+                    <button class="send-comment-btn" onclick="addComment('letter1')">SEND RADIO 📡</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="letter-navigation">
+            <button class="back-index"> < back</button>
+            <button class="next-letter" data-next="letter2">next ></button>
+        </div>
+    </div>
+</section>
+
+<!-- =========================
+     LETTER 02
+========================== -->
+<section id="letter2" class="letter-page">
+    <div class="letter-wrapper">
+        <div class="letter-top">
+            <span>02 / 26</span>
+            <span>6 Reasons why I love you</span>
+        </div>
+        <article class="paper">
+            <p class="letter-date">27/9</p>
+            <h2>HIII SAYAANGG! (˶˃ ᵕ ˂˶) .ᐟ.ᐟ</h2>
+            <p>6 yaah...?? kenapa 6? I'm sure I don't need 100 reasons to show my love WKWKW. W juga gatau sih (lupa hwhwhw) maaf yeah, tapi agaknya 6 tuh M E R O N A. ENTAHLAAHH, aku bikin section ini pun awal banget kan, jadi aku asal kasih nama aja, tapi kayaknya bener 6 itu your name deh. HEHEH ya pokoknya gitu ya sayang 😅❤️</p>
+<p><b>1. I love you because you're you</b><br>
+I don't really know how to explain this one without sounds cheesy, yaa I love you because you're you. Mulai dari cara kamu chitchat dengan aku, cara kamu mikir, cara kamu cerita ke aku, jsnsjsnk yaa i love ittt! Apalagi setiap malam somehow kamh selalu bikin aku makin sayang, makin cinta, makin mau aku bawa ke rumah terus aku ndbdksns GEMES mau aku peluk terus gamau lepas. I love having you as my person! 😅😅❤️❤️</p>
+            <p><b>2. Your random sweet compliments to me</b><br>
+            BZNSKSNSJ INI LUCUUU BANGET SAYAAANGGGGGGGGGGG, lately aku lagi suka banget compliments kamu buat aku sebelum kamu bobo snjsksn 🫠🫠 melting se-melting melting nyah, terus seperti itu ya hehe 😆😆❤️</p>
+            <p><b>3. The times where you give me the reassurance I need whenever I want you to comfort me whenever I'm sad or mad</b><br>
+            I love how you can make me feel a little safer when my mind gets too loud. When i have a too much problem in my mind, I always knowing that you're there and I always can come to you as my home.</p>
+            <p><b>4. Your pretty eyes that I could stare at for hours! 🤩</b><br>
+            YOUR EYESSS. Aku beneran suka banget sama mata kamu, sowjdhskjs cantiiik sayaaang aku sukaa banget 😍 There's just something about the way you look at the camera that makes your eyes look so soft and pretty, and I swear I could stare at them for hours without getting bored.. kalau kamu abis jepret jepret, send it to me ya sayang 🥺🥺 I adore you sm cantikku snjsksn 🥺❤️</p>
+            <P><B>5. When you're upset, pundung, ngambek, pokoknya aku suka kamu kalau marah (lucu muah) jadi aku akan selalu begitu karena aku suka</B><br>
+            Kenapa yah sayang, I find you lucu always ajh kalau kamu ngambek, kayak nsjsksn 😅😅 TAPI GAMAU BANGET KALO AKU YG NGAMBEK, GA LUCU SUMPAH.</P>
+            <p><b>6. The way you know me so well!</b><br>
+            I love when you remember a lot of my lil things that I probably don't even realize you remember. It makes me feel.. seen. Kea... muah ternyata kamu beneran dengerin aku selama ini anjay how sweet 🥺🥺</p>
+            <p class="signature">LOVE YOUUUUUU ENDLESSLY SAYANNGGG!</p>
+        </article>
+
+        <div class="comment-section">
+            <div class="comment-header">
+                <span class="radio-badge">TEAM RADIO</span>
+                <h3>DRIVER RESPONSE</h3>
+            </div>
+            <div class="comment-list" id="commentList-letter2"></div>
+            <div class="comment-form">
+                <textarea id="commentInput-letter2" placeholder="Type your reply to pit wall..."></textarea>
+                <div class="form-actions">
+                    <div class="profile-selector">
+                        <label class="profile-option">
+                            <input type="radio" name="profile-letter2" value="MER" checked>
+                            <span class="custom-radio mer">MER</span>
+                        </label>
+                        <label class="profile-option">
+                            <input type="radio" name="profile-letter2" value="AVE">
+                            <span class="custom-radio ave">AVE</span>
+                        </label>
+                    </div>
+                    <button class="send-comment-btn" onclick="addComment('letter2')">SEND RADIO 📡</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="letter-navigation">
+            <button class="back-index"> < back</button>
+            <button class="next-letter" data-next="letter3">next ></button>
+        </div>
+    </div>
+</section>
+
+<!-- =========================
+     LETTER 03
+========================== -->
+<section id="letter3" class="letter-page">
+    <div class="letter-wrapper">
+        <div class="letter-top">
+            <span>03 / 26</span>
+            <span>Open when you feel happy</span>
+        </div>
+        <article class="paper">
+            <p class="letter-date">11/9</p>
+            <h2>Haaaiii Nona sayangg!</h2>
+            <p>Yaaayyy! I’m so glad that you’re happy and in a good mood, sayang! :> Enjoy your happiness dulu ya sayang, jangan buru-buru ke-distract sama yang lain.</p>
+            <p>Sekecil apa pun alasan di balik senyum bahagia kamu, kalau itu emang bikin kamu bahagia, berarti ya emang bikin kamu bahagia aowkaowka. Aku cuma mau kamu tau, melihat kamu bahagia juga selalu jadi salah satu hal yang bikin aku ikut bahagia.</p>
+            <p>Dan kalau sekarang kamu sedang tersenyum membaca ini, berarti misiku berhasil (kalau ngga berhasil, tolong chat aku) hwhwhw. Oh iya, jangan lupa cerita ke aku ya! Aku juga mau tahu apa yang berhasil bikin sayangku sebahagia ini hari ini.</p>
+            <p>I’m so happy for you, sayangku. Semoga selalu ada banyak hal yang membuatmu tersenyum, meskipun kalau suatu hari kamu kehabisan alasan untuk tersenyum, kamu bisa mengingat aku―barangkali aku bisa jadi salah satunya.</p>
+            <p>Dan semoga selalu ada banyak hal yang membuat senyuman manismu itu tinggal lebih lama di wajahmu yang cantik itu ya sayangku (˶˃𐃷˂˶)</p>
+            <p class="signature">Sekarang lanjutkan harimu dengan bahagia ya!<br></p>
+        </article>
+
+        <div class="comment-section">
+            <div class="comment-header">
+                <span class="radio-badge">TEAM RADIO</span>
+                <h3>DRIVER RESPONSE</h3>
+            </div>
+            <div class="comment-list" id="commentList-letter3"></div>
+            <div class="comment-form">
+                <textarea id="commentInput-letter3" placeholder="Type your reply to pit wall..."></textarea>
+                <div class="form-actions">
+                    <div class="profile-selector">
+                        <label class="profile-option">
+                            <input type="radio" name="profile-letter3" value="MER" checked>
+                            <span class="custom-radio mer">MER</span>
+                        </label>
+                        <label class="profile-option">
+                            <input type="radio" name="profile-letter3" value="AVE">
+                            <span class="custom-radio ave">AVE</span>
+                        </label>
+                    </div>
+                    <button class="send-comment-btn" onclick="addComment('letter3')">SEND RADIO 📡</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="letter-navigation">
+            <button class="back-index"> < back</button>
+            <button class="next-letter" data-next="letter4">next ></button>
+        </div>
+    </div>
+</section>
+
+<!-- =========================
+     LETTER 04
+========================== -->
+<section id="letter4" class="letter-page">
+    <div class="letter-wrapper">
+        <div class="letter-top">
+            <span>04 / 26</span>
+            <span>Open when you feel bored</span>
+        </div>
+        <article class="paper">
+            <p class="letter-date">14/9</p>
+            <h2>Hillu Nona sayangg!</h2>
+            <p>Knph buka ini, lagi bosen banget kahh. Coba diinget lagi, siapa tau masih ada hal yang harus kamu kerjain, kayak tugas lah atau jj tentang Ferrari yang masih ada di draft cc kamu. Tapii, kalau emang udah tuntas semua, terus sekarang lagi bosen atau ngga tau mau ngapain, aku di sini ada something yang bisa untuk nemenin kamu setiaapp saat, hehe __^. Aku udah siapin beberapa little games yang bisa kamu mainin berulang kali (aku update game nya kalo mood ok), jadi daripada bengong atau merenung dan berakhir ketiduran, mending main dulu yh.</p>
+            <p>Join <a href="https://t.me/+va5Tntkg1cI3OGZl" target="_blank">sini</a> ya, sayang!</p>
+            <p>Have funnn, sayangku! Semoga ada sesuatu di sana yang bisa bikin kamu senyum (berulang kali) atau seenggaknya sedikit ngilangin rasa bosen kamu yaa.</p>
+            <p class="signature">And if you're still bored after the game, atau hanya sekedar butuh aku.. hhhhh :V. Yaudah, bother me ajh ndk ada pilihan lain.</p>
+        </article>
+
+        <div class="comment-section">
+            <div class="comment-header">
+                <span class="radio-badge">TEAM RADIO</span>
+                <h3>DRIVER RESPONSE</h3>
+            </div>
+            <div class="comment-list" id="commentList-letter4"></div>
+            <div class="comment-form">
+                <textarea id="commentInput-letter4" placeholder="Type your reply to pit wall..."></textarea>
+                <div class="form-actions">
+                    <div class="profile-selector">
+                        <label class="profile-option">
+                            <input type="radio" name="profile-letter4" value="MER" checked>
+                            <span class="custom-radio mer">MER</span>
+                        </label>
+                        <label class="profile-option">
+                            <input type="radio" name="profile-letter4" value="AVE">
+                            <span class="custom-radio ave">AVE</span>
+                        </label>
+                    </div>
+                    <button class="send-comment-btn" onclick="addComment('letter4')">SEND RADIO 📡</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="letter-navigation">
+            <button class="back-index"> < back</button>
+            <button class="next-letter" data-next="letter5">next ></button>
+        </div>
+    </div>
+</section>
+
+<!-- =========================
+     LETTER 05
+========================== -->
+<section id="letter5" class="letter-page">
+    <div class="letter-wrapper">
+        <div class="letter-top">
+            <span>05 / 26</span>
+            <span>Open when you forget how I look like</span>
+        </div>
+        <article class="paper">
+            <p class="letter-date">14/9</p>
+            <h2>Haayooo, kenapa tiba-tiba? kangen yh</h2>
+            <div class="mystery-box-wrapper">
+                <p class="box-hint" id="hint5">Tap box nya, sayang!</p>
+                <div id="mysteryBox5" class="mystery-box">
+                    <div class="box-inner">
+                        <span class="box-icon gift-emoji">🎁</span>
+                    </div>
+                    <div class="coupon-media-container hidden">
+                        <img src="Image/FPOM COUPON.png" alt="Love Coupon" class="media-letter">
+                    </div>
+                </div>
+            </div>
+            <p class="signature">Selamat menikmati kecantikkanku! :p</p>
+        </article>
+
+        <div class="comment-section">
+            <div class="comment-header">
+                <span class="radio-badge">TEAM RADIO</span>
+                <h3>DRIVER RESPONSE</h3>
+            </div>
+            <div class="comment-list" id="commentList-letter5"></div>
+            <div class="comment-form">
+                <textarea id="commentInput-letter5" placeholder="Type your reply to pit wall..."></textarea>
+                <div class="form-actions">
+                    <div class="profile-selector">
+                        <label class="profile-option">
+                            <input type="radio" name="profile-letter5" value="MER" checked>
+                            <span class="custom-radio mer">MER</span>
+                        </label>
+                        <label class="profile-option">
+                            <input type="radio" name="profile-letter5" value="AVE">
+                            <span class="custom-radio ave">AVE</span>
+                        </label>
+                    </div>
+                    <button class="send-comment-btn" onclick="addComment('letter5')">SEND RADIO 📡</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="letter-navigation">
+            <button class="back-index"> < back</button>
+            <button class="next-letter" data-next="letter6">next ></button>
+        </div>
+    </div>
+</section>
+
+<!-- =========================
+     LETTER 06
+========================== -->
+<section id="letter6" class="letter-page">
+    <div class="letter-wrapper">
+        <div class="letter-top">
+            <span>06 / 26</span>
+            <span>Open when you want to remember the night we met</span>
+        </div>
+        <article class="paper final-paper">
+            <p class="letter-date">14/9</p>
+            <h2>Hy luv,</h2>
+            <p>aku juga kangen masa-masa maloe maloe cat pas chit chat sama kamu dulu. Maka dari itu, yh take a look la first vt di account @endlessyly on TikTok ya, request aja and i'll accept soon.</p>
+            <p>Walaupun jujur, abis buatnya aku sendiri malah ngerasa geli (iw) TAPI LUCU 🥺🥺. It's ok la, u know, how I and you felt about each other waktu itu kan... GEMES BGT IH JD KANGENSJJSKS</p>
+            <p>So, leggo back for a little while ke masa-masa di mana semuanya masih baru, masih malu-malu, masih saling nebak perasaan, dan belum tahu kalau ternyata kita bakal sampai sejauh ini ueueueuue.</p>
+            <p class="signature">Enjoy the little throwback, sayang!</p>
+        </article>
+
+        <div class="comment-section">
+            <div class="comment-header">
+                <span class="radio-badge">TEAM RADIO</span>
+                <h3>DRIVER RESPONSE</h3>
+            </div>
+            <div class="comment-list" id="commentList-letter6"></div>
+            <div class="comment-form">
+                <textarea id="commentInput-letter6" placeholder="Type your reply to pit wall..."></textarea>
+                <div class="form-actions">
+                    <div class="profile-selector">
+                        <label class="profile-option">
+                            <input type="radio" name="profile-letter6" value="MER" checked>
+                            <span class="custom-radio mer">MER</span>
+                        </label>
+                        <label class="profile-option">
+                            <input type="radio" name="profile-letter6" value="AVE">
+                            <span class="custom-radio ave">AVE</span>
+                        </label>
+                    </div>
+                    <button class="send-comment-btn" onclick="addComment('letter6')">SEND RADIO 📡</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="letter-navigation">
+            <button class="back-index"> < back</button>
+            <button class="next-letter" data-next="letter7">next ></button>
+        </div>
+    </div>
+</section>
+
+<!-- =========================
+     LETTER 07
+========================== -->
+<section id="letter7" class="letter-page">
+    <div class="letter-wrapper">
+        <div class="letter-top">
+            <span>07 / 26</span>
+            <span>Open when you miss me</span>
+        </div>
+        <article class="paper final-paper">
+            <p class="letter-date">14/9</p>
+            <h2>Hewllooo Nona kakakku sayang, mwah mwah.</h2>
+            <p>Knph y kok tumben kangen, biasanya juga ngilang sama alat elektronik yg km pake buat nontonin atau ngedit si Ferrari ntuh?? 🙄👎🏻</p>
+            <p>Idk when you’ll open this, yaa. No matter if it’s day or night, pokoknya whenever you miss me and I’m not available for you, come here for a little while yaa.</p>
+            <p>Aku tau bangett kadang aku ngga selalu bisa langsung ada pas kamu lagi pengen cerita, pengen call, atau cuma pengen chit chat.</p>
+            <p>Jadi kalau sekarang kamu lagi kangen aku, please remember that aku nggak pergi ke mana-mana cuma karena aku lagi nggak available. Aku mungkin lagi sibuk, ketiduran, kulyeah dengan variasi anakannya (tugas, kerkom, event, etc) atau lagi punya urusan sendiri, but I'm still here, and I still think about you too ;)</p>
+            <p>Nanti kalau sama-sama udah free, kita sama-sama cerita-cerita atau sekadar ngeluh tentang hari ini ya sayangkuu.</p>
+            <p>Kalau kangen, baca ini lagi. Anggap aja ini little piece of me yang bisa kamu buka kapan pun kamu butuh aku. Because even when I'm not right there to reply, you still have your place with me.</p>
+            <p class="signature">Now come here, sayang, kiss dulu muaahh. Udah yaa kangennya, nanti kalau aku muncul jangan malah dianggurin</p>
+        </article>
+
+        <div class="comment-section">
+            <div class="comment-header">
+                <span class="radio-badge">TEAM RADIO</span>
+                <h3>DRIVER RESPONSE</h3>
+            </div>
+            <div class="comment-list" id="commentList-letter7"></div>
+            <div class="comment-form">
+                <textarea id="commentInput-letter7" placeholder="Type your reply to pit wall..."></textarea>
+                <div class="form-actions">
+                    <div class="profile-selector">
+                        <label class="profile-option">
+                            <input type="radio" name="profile-letter7" value="MER" checked>
+                            <span class="custom-radio mer">MER</span>
+                        </label>
+                        <label class="profile-option">
+                            <input type="radio" name="profile-letter7" value="AVE">
+                            <span class="custom-radio ave">AVE</span>
+                        </label>
+                    </div>
+                    <button class="send-comment-btn" onclick="addComment('letter7')">SEND RADIO 📡</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="letter-navigation">
+            <button class="back-index"> < back</button>
+            <button class="next-letter" data-next="letter8">next ></button>
+        </div>
+    </div>
+</section>
+
+<!-- =========================
+     LETTER 08
+========================== -->
+<section id="letter8" class="letter-page">
+    <div class="letter-wrapper">
+        <div class="letter-top">
+            <span>08 / 26</span>
+            <span>Open when you can't sleep</span>
+        </div>
+        <article class="paper">
+            <p class="letter-date">15/9</p>
+            <h2>ᶻ 𝗓 𐰁 ᶻ 𝗓 𐰁 ᶻ 𝗓 𐰁</h2>
+            <p>nyonyonyonyonyonyo ngapain masih bangun jam segini, kenawhy lom bobo km kak¿</p>
+            <p>Kalau lagi susah tidur karena isi pikiran kamu atau apapun itu yang buat kamu jadi ke distract buat tidur, put your phone for a little bit (matiin ajlh), stretch your body (GTW WKWKWK AKU BIASANYA GT), and just let yourself rest, tutup mata nyaa, abaikan semua yang ada di pikiran kamu. You don't have to figure everything out tonight. Whatever is on your mind can wait until tomorrow kok, aman ja boozszsss.</p>
+            <p>And what if aku ada di sebelah kamu sekarang di jam segini (aku udah bobo kali), mungkin aku bakal cerewet sambil setengah sadar nyuruh kamu tidur sambil bilang, “apasih bacot tidur sana, berisik.” Tapi karena aku nggak bisa literally ada di samping kamu sekarang, anggep aja surat ini sebagai little goodnight reminder from me.</p>
+            <p>Dan kalau emang kamu masih belum bisa bobo, aku absenin nama-nama binatang yh biar km bs bobo:</p>
+            <p>1. kadal<br>
+            2. beruang<br>
+            3. jerapah<br>
+            4. macan<br>
+            5. keledai<br>
+            6. kupu-kupu<br>
+            7. kera<br>
+            8. monyet<br>
+            9. kamu<br>
+            10. koala<br>
+            11. kunyuk<br>
+            12. aku<br>
+            (Kata Dilan)<br>
+            </p>
+            <p>Tidur ya Nona, maaf aku tinggal bobo duluan. kamu harus tau, aku ngga mau ninggalin kamu bobo duluan. kamu aja yang ninggalin aku bobo duluan. (Kata aku tapi ada Dilan nya dikit)</p>
+            <p>So close your eyes, get comfy, and pretend I'm saying this right beside you, “Goodnight, sayangku. you did enough today, I'm proud of you. Now let yourself rest ya sayang.”</p>
+            <p class="signature">Muah. Sleep well, my favorite sleepyhead. Jangan stay up late lagi yaa. ❤️</p>
+        </article>
+
+        <div class="comment-section">
+            <div class="comment-header">
+                <span class="radio-badge">TEAM RADIO</span>
+                <h3>PADDOCK RESPONSE</h3>
+            </div>
+            <div class="comment-list" id="commentList-letter8"></div>
+            <div class="comment-form">
+                <textarea id="commentInput-letter8" placeholder="Type your reply to pit wall..."></textarea>
+                <div class="form-actions">
+                    <div class="profile-selector">
+                        <label class="profile-option">
+                            <input type="radio" name="profile-letter8" value="MER" checked>
+                            <span class="custom-radio mer">MER</span>
+                        </label>
+                        <label class="profile-option">
+                            <input type="radio" name="profile-letter8" value="AVE">
+                            <span class="custom-radio ave">AVE</span>
+                        </label>
+                    </div>
+                    <button class="send-comment-btn" onclick="addComment('letter8')">SEND RADIO 📡</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="letter-navigation">
+            <button class="back-index"> < back</button>
+            <button class="next-letter" data-next="letter9">next ></button>
+        </div>
+    </div>
+</section>
+
+<!-- =========================
+     LETTER 09
+========================== -->
+<section id="letter9" class="letter-page">
+    <div class="letter-wrapper">
+        <div class="letter-top">
+            <span>09 / 26</span>
+            <span>Open when you have a nightmare</span>
+        </div>
+        <article class="paper">
+            <p class="letter-date">15/9</p>
+            <h2>🏃🏻‍♀️ 🏃🏻‍♀️ 🏃🏻‍♀️</h2>
+            <p>DOOOOORRR MIMPI APA BOS KOK SAMPE KEBANGUNNNNNNNNN???? Harusnya tadi sebelum bobo berdoa dulu biar mimpiin gw, bukan malah nightmare gini hhhhhh... BUT IT'S OK, setelah ini kalau kamu mau lanjut bobo (harus) berdoa dulu ya biar ndk nightmare lagi. Minta aja ke Allah-nya buat mimpi kamu diisi aku ajh hhhhh.</p>
+            <p>Okok jangan jauh-jauh, first of all karena sayangku ini abis kena nightmare, santay && tenang yaa. Jangan dipikirin lagi mimpi kamu tadi, just let it flow aja.. soalnya kalau terus kepikiran malah bikin kamu makin susah tidur. Kalau masih kebayang, coba alihin pikiran kamu ke sesuatu yang jauh lebih berbeze dari mimpi kamu itu. Atau kalau butuh distraction, baca tuh novel bromance mu atau manhwa pokeb mu atau scroll tiktok, yaahh banyak lah pokoknya sayang. Ya kann? Pokoknya lakuin aja sesuatu yang bikin pikiran kamu ke-distract dan rasa bayang-bayang dari mimpi tadi pelan-pelan ilang.</p>
+            <p>And if you still feel a little scared, it's okay ya. Take your time dulu sampai kamu ngerasa aman dan tenang lagi sebelum lanjut tidur.</p>
+            <p class="signature">Sending virtual hug for my nona 🫂🫂🫂 bobo lagi yaa, jangan dipikirin nightmare nya. goodnight sayangkuu.</p>
+        </article>
+
+        <div class="comment-section">
+            <div class="comment-header">
+                <span class="radio-badge">TEAM RADIO</span>
+                <h3>DRIVER RESPONSE</h3>
+            </div>
+            <div class="comment-list" id="commentList-letter9"></div>
+            <div class="comment-form">
+                <textarea id="commentInput-letter9" placeholder="Type your reply to pit wall..."></textarea>
+                <div class="form-actions">
+                    <div class="profile-selector">
+                        <label class="profile-option">
+                            <input type="radio" name="profile-letter9" value="MER" checked>
+                            <span class="custom-radio mer">MER</span>
+                        </label>
+                        <label class="profile-option">
+                            <input type="radio" name="profile-letter9" value="AVE">
+                            <span class="custom-radio ave">AVE</span>
+                        </label>
+                    </div>
+                    <button class="send-comment-btn" onclick="addComment('letter9')">SEND RADIO 📡</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="letter-navigation">
+            <button class="back-index"> < back</button>
+            <button class="next-letter" data-next="letter10">next ></button>
+        </div>
+    </div>
+</section>
+
+<!-- =========================
+     LETTER 10
+========================== -->
+<section id="letter10" class="letter-page">
+    <div class="letter-wrapper">
+        <div class="letter-top">
+            <span>10 / 26</span>
+            <span>Open when you feel sad</span>
+        </div>
+        <article class="paper">
+            <p class="letter-date">16/9</p>
+            <h2>Hai, sayangku..</h2>
+            <p>KENAPA SEDIHHHHH SAYANG :((, aku loh dari tadi perasaannya ngga enak banget, ternyata yang di hati nya lagi sedih ˙◠˙.</p>
+            <p>Idk what happened di hari kamu. But you don't have to make it sound okay for me ya? Ceritain aja semuanya ke aku. Jangan pernah kepikiran kalau kamu cerita ke aku malah jadi beban buat aku juga.. You’re always free to tell me about your bad days. You can tell me the "jelekkk" parts, the confusing parts, even the parts you don't know how to explain (aku usahain ngerti).</p>
+            <p>Sayang, kalau semisal mau cerita, langsung text or call me aja ya... and if you don't want to karena belum siap cerita, it's okay, jangan dipaksain. Kamu bisa ceritain ke aku kalau kamu mau dan udah enakan..</p>
+            <p>Sekarang coba minum dulu buat nenangin sedikit your thoughts. Kalau masih kepikiran sama hal yang bikin kamu sedih, tenang aja ya sayang. And now, imagine me sitting right next to you, nemenin kamu dan meluk kamu sampai kamu merasa sedikit lebih tenang.</p>
+            <p>I wish I could be there for real. Bukan cuma lewat chat and this small letter. I wish I could actually sit beside you, listen to everything you want to say, and remind you that you're not alone. I'm always here, waiting for you to tell me about everything that you feel.</p>
+            <p>Come here, sayang. You don't have to carry everything by yourself ya ___^, I'm really proud of you for making it through today! :D</p>
+            <p class="signature">Jangan sedih-sedih lagi yaa!! :D</p>
+        </article>
+
+        <div class="comment-section">
+            <div class="comment-header">
+                <span class="radio-badge">TEAM RADIO</span>
+                <h3>DRIVER RESPONSE</h3>
+            </div>
+            <div class="comment-list" id="commentList-letter10"></div>
+            <div class="comment-form">
+                <textarea id="commentInput-letter10" placeholder="Type your reply to pit wall..."></textarea>
+                <div class="form-actions">
+                    <div class="profile-selector">
+                        <label class="profile-option">
+                            <input type="radio" name="profile-letter10" value="MER" checked>
+                            <span class="custom-radio mer">MER</span>
+                        </label>
+                        <label class="profile-option">
+                            <input type="radio" name="profile-letter10" value="AVE">
+                            <span class="custom-radio ave">AVE</span>
+                        </label>
+                    </div>
+                    <button class="send-comment-btn" onclick="addComment('letter10')">SEND RADIO 📡</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="letter-navigation">
+            <button class="back-index"> < back</button>
+            <button class="next-letter" data-next="letter11">next ></button>
+        </div>
+    </div>
+</section>
+
+<!-- =========================
+     LETTER 11
+========================== -->
+<section id="letter11" class="letter-page">
+    <div class="letter-wrapper">
+        <div class="letter-top">
+            <span>11 / 26</span>
+            <span>Open when you are having a bad day</span>
+        </div>
+        <article class="paper">
+            <p class="letter-date">16/9</p>
+            <h2>👤 (+*): Hey Avee!!! Someone has messed up your girl's day!!!!<br>
+                👧🏻 (+007): HUHHG???? WHO MESSED UP MY GIRL'S DAY TODAY??!?! 😠😠😠</h2>
+            <p>SAYANG SAYANGG, WHAT HAPPENED?? Kalau sayang rasa hari ini kayak lebih berat dari biasanya, you can slow down for a while. Ngga semua hal harus langsung kamu beresin hari ini, and you don't have to pretend that everything is fine either yaa!</p>
+            <p>Kalau ada hal yang bikin kamu kesel, capek, kecewa, atau bahkan cuma bikin mood kamu down, jadi jelek seharian ini, it's okay ya. Sometimes you just have those days, and that's not something you need to feel guilty about!!</p>
+            <p>Inget ya sayang, one bad day doesn't mean everything is going wrong, and one bad moment ngga menghapus all the good things you've done! _^</p>
+            <p>So take a little break, pesen-pesen makanan yang bisa bikin mood kamu naik, atauu do something that is your hobby, biar kamu seneng juga ngejalaninnya. Atau kalau cuma mau bobo doang juga bisaa, pokoknya let urself rest after all that ya.</p>
+            <p>Dan kalau km mau ceritain sama aku apa yang bikin mood kamu down today, just tell me what happened di hari kamu hari ini ya. Tell me whatever on your mind and I'll listen, as always.</p>
+            <p class="signature">For now, just be gentle with yourself, okay? You can't have a better tomorrow if you're thinking about today or yesterday all the time. Better days are coming (very soon!), and I'm right here with you always, sayang :3</p>
+        </article>     
+
+        <div class="comment-section">
+            <div class="comment-header">
+                <span class="radio-badge">TEAM RADIO</span>
+                <h3>DRIVER RESPONSE</h3>
+            </div>
+            <div class="comment-list" id="commentList-letter11"></div>
+            <div class="comment-form">
+                <textarea id="commentInput-letter11" placeholder="Type your reply to pit wall..."></textarea>
+                <div class="form-actions">
+                    <div class="profile-selector">
+                        <label class="profile-option">
+                            <input type="radio" name="profile-letter11" value="MER" checked>
+                            <span class="custom-radio mer">MER</span>
+                        </label>
+                        <label class="profile-option">
+                            <input type="radio" name="profile-letter11" value="AVE">
+                            <span class="custom-radio ave">AVE</span>
+                        </label>
+                    </div>
+                    <button class="send-comment-btn" onclick="addComment('letter11')">SEND RADIO 📡</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="letter-navigation">
+            <button class="back-index"> < back</button>
+            <button class="next-letter" data-next="letter12">next ></button>
+        </div>
+    </div>
+</section>
+
+<!-- =========================
+     LETTER 12
+========================== -->
+<section id="letter12" class="letter-page">
+    <div class="letter-wrapper">
+        <div class="letter-top">
+            <span>12 / 26</span>
+            <span>Open when you feel stressed out</span>
+        </div>
+        <article class="paper">
+            <p class="letter-date">17/9</p>
+            <h2>STRESS DETECTED! NINUNINU 🚑🚨</h2>
+            <p>AAAAA SAYANG KENAPAA?? kalau rasanya udah mau meledaak banget (T__T), stay here for a while dulu yaa :)</p>
+            <p>While we'stop, let's do a tiny reset, biar sayangku ini nggak terlalu terasa capeknya.. :(</p>
+            <p>STEP 01. KOSONGIN PIKIRAN KAMU<br>
+                Whatever's currently running around in your head, put it aside for a moment! YOU DON'T NEED TO SOLVE EVERYTHING SEKARANG YA SAYANG YA</p>
+            <p>STEP 02. BASIC PROTOCOL<br>
+            Have you eaten and had some water? If you haven't, take care of those first. </p>
+            <p>STEP 03. SOME THINGS CAN WAIT!<br>
+            INGET YAA SAYANG, you aren't a machine. There's no achievement unlocked for exhausting yourself, kan? (boong deng, gatau hehe)</p>
+            <p>Better istirahat sejenak, dan di waktu itu, buang semua pikiran yang bikin kamu overwhelmed gini ya, sayang..</p>
+            <p>Kalau mau rest dulu dari media sosial (gawai yekan), boleh bangettt. Senyamannya kamu aja ya.. And if you already feel better, feel free buat cerita-cerita ke aku setelahnya. I'm always here with you, ya sayang :D</p>
+            <p>Now, take a little break with me, ya?
+            Take a deep breath sama aku ya, lakuin secara berulang kali sampai kamu merasa nyaman ya sayang.</p>
+            <p>Okay, leggo!<br>
+            In... 1... 2... 3!<br>
+            Out... 1... 2... 3!</p>
+            <p>Repeat it sampai kamu ngerasa enakan ya sayang. Jangan lupa dibarengin minum air putih, lalu setelah itu kamu langsung bobo aja ya biar nggak kepikiran banget. Walau bobo nggak menyelesaikan semuanya, seenggaknya kalau udah sampe overwhelmed gini, kamu masih dapat waktu istirahat kan?</p>
+            <p>Gih bobo ya, sayang. Selamat tidur cintaku, semoga apapun yang sedang kamu hadapi cepat selesai ya, sayang. 💕</p>
+            <p>You survived the stress, took your little break, drank your water, breathed with me, and now your only mission is BOBOOOO. And last.. I just wanna remind you that you're actually allowed to rest! :D 👍🏻👍🏻👍🏻</p>
+            <p>Selamat beristirahat sayang, kamu masih ada things to do setelah ini, jadi rehatkan badan dan pikiranmu sejenak yaa.</p>
+            <p class="signature">And please don't forget that you don't have to do all of them today, lovee.</p>
+        </article>
+        <div class="comment-section">
+            <div class="comment-header">
+                <span class="radio-badge">TEAM RADIO</span>
+                <h3>DRIVER RESPONSE</h3>
+            </div>
+            <div class="comment-list" id="commentList-letter12"></div>
+            <div class="comment-form">
+                <textarea id="commentInput-letter12" placeholder="Type your reply to pit wall..."></textarea>
+                <div class="form-actions">
+                    <div class="profile-selector">
+                        <label class="profile-option">
+                            <input type="radio" name="profile-letter12" value="MER" checked>
+                            <span class="custom-radio mer">MER</span>
+                        </label>
+                        <label class="profile-option">
+                            <input type="radio" name="profile-letter12" value="AVE">
+                            <span class="custom-radio ave">AVE</span>
+                        </label>
+                    </div>
+                    <button class="send-comment-btn" onclick="addComment('letter12')">SEND RADIO 📡</button>
+                </div>
+            </div>
+        </div>
+        <div class="letter-navigation">
+            <button class="back-index"> < back</button>
+            <button class="next-letter" data-next="letter13">next ></button>
+        </div>
+    </div>
+</section>
+
+<!-- =========================
+     LETTER 13
+========================== -->
+<section id="letter13" class="letter-page">
+    <div class="letter-wrapper">
+        <div class="letter-top">
+            <span>13 / 26</span>
+            <span>Open when you feel nervous</span>
+        </div>
+        <article class="paper">
+            <p class="letter-date">17/9</p>
+            <h2>HAII HAII SAYANG HALOO! 🙋🏻‍♀️🙋🏻‍♀️🙋🏻‍♀️</h2>
+            <p>Sayangku lagi nervous kahh? Kenawhy ntuh kalau boleh cium (eh, kalo boleh tau). Sayang ingat dan camkan itu yh! It's okay to be nervous, sayang. Wajar banget perasaan nervous itu, you don't have to force yourself to suddenly feel calm. Take it slow yaa..</p>
+            <p>You don't have to be perfect, sayang. You just have to show up and do your best with what you have, yaa!!</p>
+            <p>So go on, take a little breath, fix your posture (harus TEGAK! kaya kacang ijo), then go do your thing dengan pd yaaah!!!</p>
+            <p>Now gooo, you've got this sayang!! Don't let the nervousness convince you that you can't do it, because I know you can! Semangat, sayang!<br></p>
+            <p class="signature">Aku percaya kamu bisa mengerjakan sekaligus mengatasinya ya sayangku. I'll be cheering for you from our house ya :p</p>
+        </article>
+        <div class="comment-section">
+            <div class="comment-header">
+                <span class="radio-badge">TEAM RADIO</span>
+                <h3>DRIVER RESPONSE</h3>
+            </div>
+            <div class="comment-list" id="commentList-letter13"></div>
+            <div class="comment-form">
+                <textarea id="commentInput-letter13" placeholder="Type your reply to pit wall..."></textarea>
+                <div class="form-actions">
+                    <div class="profile-selector">
+                        <label class="profile-option">
+                            <input type="radio" name="profile-letter13" value="MER" checked>
+                            <span class="custom-radio mer">MER</span>
+                        </label>
+                        <label class="profile-option">
+                            <input type="radio" name="profile-letter13" value="AVE">
+                            <span class="custom-radio ave">AVE</span>
+                        </label>
+                    </div>
+                    <button class="send-comment-btn" onclick="addComment('letter13')">SEND RADIO 📡</button>
+                </div>
+            </div>
+        </div>
+        <div class="letter-navigation">
+            <button class="back-index"> < back</button>
+            <button class="next-letter" data-next="letter14">next ></button>
+        </div>
+    </div>
+</section>
+
+<!-- =========================
+     LETTER 14
+========================== -->
+<section id="letter14" class="letter-page">
+    <div class="letter-wrapper">
+        <div class="letter-top">
+            <span>14 / 26</span>
+            <span>Open when you are crying</span>
+        </div>
+        <article class="paper">
+            <p class="letter-date">17/9</p>
+            <h2>ueueueu.. ¿¿ 🏃🏻‍♀️ 🏃🏻‍♀️ siapakah yang menangis ¿¿</h2>
+            <p>Sayang :( what happened.. kenapa kamu menangis :( Pantes hatiku tuh dari tadi rasanya kayak, DEG, kayak ketusuk pisau 😫😫, SAKIIITTT BANGEETTT, ternyata yang dihatiku nya lagi crying crying :(((</p>
+            <p>Sayang kenapa.. cup cup. Sayang boleh nangis kok. Kalau memang lagi berat, keluarin aja dulu ya. Nggak perlu buru-buru berhenti.</p>
+            <p>Aku nggak tau apa yang terjadi sampai sayangku ini nangis yh, no need to explain anything kalau emang kamu nya gamau cerita atau bahas soal yang bikin kamu nangis ya sayangg.</p>
+            <p>Sekarang sayang coba bayangin ini ya..<br>
+            Kamu lagi mojok aja di kasur dengan banjir yang menghiasi muka kamu itu aowkaowkak. Terus aku lagi ada di sebelah kamu, ndk banyak ngomong (karena bingung), cuma nemenin kamu nangis sebagai tanda bahwa kamu itu nggak sendirian ya sayang. Ada dedek kamu ini yang selalu setia menemani kamu di setiap hari-hari baik maupun buruk kamu (like what I said di saat aku nembak kamu itu, kalau nggak salah ya?)<br>
+            Terus, aku ambil tissue pelan-pelan, lalu mengusap air sungai meluap yang masih banjir di pipimu itu. After that, I'm giving you a space to decide you want hug or nah.<br>
+            And if u want to, aku langsung memeluk kamu erattttt banget banget bangettt! 🫂🫂<br>
+            Biarin kamu nangis dulu sampai rasanya agak lega. Aku cuma tetap di pelukan kamu, sesekali mengusap punggungmu dan rambutmu pelan, sampai kamu lebih tenang. Sambil ngomong:<br>
+            It's okay, sayang. You don't have to talk about anything yet sampai kamu ngerasa lega dan nyaman buat omonginnya, ya.</p>
+            <p>That's all sih aowkwkwkkwkwkwkwkwkwkwk ngakak maaf krinj, tapi sayang mau nggak aku peluk pas crying crying, hehe 😅😅✌🏻✌🏻</p>
+            <p>Kalau sudah sedikit reda, sayang cuci muka ya.. Setelah itu minum air sedikit ya, sayang. Usap mukanya pelan-pelan pakai tissue, setelah itu, do whatever you think might help distract your mind ya..</p>
+            <p class="signature">Jangan sedih-sedih ya sayang ;)</p>
+        </article>
+        <div class="comment-section">
+            <div class="comment-header">
+                <span class="radio-badge">TEAM RADIO</span>
+                <h3>DRIVER RESPONSE</h3>
+            </div>
+            <div class="comment-list" id="commentList-letter14"></div>
+            <div class="comment-form">
+                <textarea id="commentInput-letter14" placeholder="Type your reply to pit wall..."></textarea>
+                <div class="form-actions">
+                    <div class="profile-selector">
+                        <label class="profile-option">
+                            <input type="radio" name="profile-letter14" value="MER" checked>
+                            <span class="custom-radio mer">MER</span>
+                        </label>
+                        <label class="profile-option">
+                            <input type="radio" name="profile-letter14" value="AVE">
+                            <span class="custom-radio ave">AVE</span>
+                        </label>
+                    </div>
+                    <button class="send-comment-btn" onclick="addComment('letter14')">SEND RADIO 📡</button>
+                </div>
+            </div>
+        </div>
+        <div class="letter-navigation">
+            <button class="back-index"> < back</button>
+            <button class="next-letter" data-next="letter15">next ></button>
+        </div>
+    </div>
+</section>
+
+<!-- =========================
+     LETTER 15
+========================== -->
+<section id="letter15" class="letter-page">
+    <div class="letter-wrapper">
+        <div class="letter-top">
+            <span>15 / 26</span>
+            <span>Open when you are sick</span>
+        </div>
+        <article class="paper">
+            <p class="letter-date">17/9</p>
+            <h2>🚨 🚨 EMERGENCY ALERT!</h2>
+            <p>(+188) . . . CONNECTED!<br>
+            👱🏻‍♀️ : PAK, PAK!<br>
+            👨🏻‍💼 : Oya bang 🤨🤨<br>
+            👱🏻‍♀️ : DOG TOLONG, OGOH-OGOH SAYA SAKIT! TOLONG SEGERA TANGANI DENGAN PERAWATAN TERBAIKNYA YA!!</p>
+            
+            <p>Ihisjisjsj sayang sakit apaaa 😭😭 Sayang kecapekan kah sampai sakit gini? :C kalo iya, berarti badan kamu lagi minta istirahat sayang. Jadi, sayang istirahat aja ya sekarang. Tutup dulu kerjaan atau apapun yang lagi kamu kerjain, kurangin screen time nyaa! Terus rebahan yang nyaman dan bobo aja bobo.</p>
+            
+            <p>Udah makan belum? Minum obatnya juga jangan lupa ya sayang. Kalau belum makan, coba makan sedikit dulu, walau nantinya kalau kamu ada rasa ga enak saat makan, paksain ya sayang, yang penting ada yang masuk dulu. Jangan sampe kamu malah makin nggak enak badan gara-gara susah makannya juga ih 😠</p>
+            
+            <p>Omong-omong, karena aku adalah dokter gajadi, lemme cek keadaan istriku ini yaa 👩🏻‍⚕️🩺</p>
+            
+            <div class="medical-check">
+                <p>Checking temperature: <b>normal</b></p>
+                <p>Checking hydration: <b>normal</b></p>
+                <p>Checking apakah istriku masih ngeyel atau ngga buat mam: <b>AH KEBIASAAN KAN 😠😠</b></p>
+            </div>
+
+            <p>Kalau sayang emang lagi sakit (yang beneran banget gitu sakitnya), take it easy today ya sayang. You don't have to force yourself to do everything seperti biasanya. Istirahat dulu sampai badan kamu lebih enakan. Yang penting kamu recover dulu ya.</p>
+
+            <!-- GAMBAR EMERGENY KIT (KLIK UNTUK BUKA ISINYA) -->
+            <div class="mystery-box-wrapper" style="text-align: center; margin: 25px 0;">
+                <p id="hint15" class="click-hint" style="font-weight: bold; color: var(--f1-red); margin-bottom: 8px;">Tap kit nya ya, sayang</p>
+                <img id="emergencyKitImg" src="Image/Emergency Kit.png" alt="Emergency Kit" class="box-media mystery-box-img" style="cursor: pointer; max-width: 180px; transition: transform 0.2s;">
+            </div>
+
+            <!-- ISI EMERGENCY KIT (AWALNYA HIDDEN/TERSEMBUNYI) -->
+            <div id="emergencyKitBox" class="emergency-kit-box hidden">
+                <div class="box-header">
+                    <h3 class="kit-title">Inside Your Emergency Kit:</h3>
+                </div>
+                
+                <ol class="kit-list">
+                    <li><b>Demam, ngga enak badan, pusing, sakit kepala:</b><br>Paracetamol + rest yang cukup.</li>
+                    <li><b>Pilek:</b><br>Dekongestan (gatau wwkwk) + banyak minum + <b>TIDUR YG BNR!!</b></li>
+                    <li><b>OBH Combi sachet uhuk uhuk:</b><br>Apa ya, ndk tau sih. Minuman hangat kaya teh juga bisa biar tenggorokannya agak enakan.</li>
+                </ol>
+
+                <div class="kit-dialog">
+                    <p><b>👹:</b> KALAU ASLAM GIMANA, CANTIK?</p>
+                    <p><b>👱🏻‍♀️:</b> Kalau u punya aslam kambuh, jangan langsung rebahan atau tiduran setelah makan ya. Minum aja obat lambung yang dikasih dari dokternya.</p>
+                </div>
+
+                <p class="kit-text">Intinya mah ya sayang, kalau badan kamu lagi nggak enak, udah cukup istirahat aja ya, kalau dipaksa malah takutnya makin ga enak kann?</p>
+                <p class="kit-text">Jadii, jangan lupa diminum obatnya ya, ikut juga aturan minumnya. Dan kalau sakitnya makin-makin, langsung periksa ya sayang.</p>
+            </div>
+
+            <p class="signature">Semoga membantu (awkwakwokaw),<br>
+            get well soon ya, sayangkuu. 💕</p>
+        </article>
+
+        <div class="comment-section">
+            <div class="comment-header">
+                <span class="radio-badge">TEAM RADIO</span>
+                <h3>DRIVER RESPONSE</h3>
+            </div>
+            <div class="comment-list" id="commentList-letter15"></div>
+            <div class="comment-form">
+                <textarea id="commentInput-letter15" placeholder="Type your reply to pit wall..."></textarea>
+                <div class="form-actions">
+                    <div class="profile-selector">
+                        <label class="profile-option">
+                            <input type="radio" name="profile-letter15" value="MER" checked>
+                            <span class="custom-radio mer">MER</span>
+                        </label>
+                        <label class="profile-option">
+                            <input type="radio" name="profile-letter15" value="AVE">
+                            <span class="custom-radio ave">AVE</span>
+                        </label>
+                    </div>
+                    <button class="send-comment-btn" onclick="addComment('letter15')">SEND RADIO 📡</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="letter-navigation">
+            <button class="back-index"> < back</button>
+            <button class="next-letter" data-next="letter16">next ></button>
+        </div>
+    </div>
+</section>
+
+<!-- =========================
+     LETTER 16
+========================== -->
+<section id="letter16" class="letter-page">
+    <div class="letter-wrapper">
+        <div class="letter-top">
+            <span>16 / 26</span>
+            <span>Open when you need some love</span>
+        </div>
+        <article class="paper">
+            <p class="letter-date">22/9</p>
+            <h2>To the keeper of my heart, Merona.</h2>
+            <p>Hai hai sayangku! 😍 If you're opening this letter, I'm assuming you need a little extra love from me today, ya? Cieeeee WKWKWK 😏😏</p>
+            <p>You don't have to accomplish something first to deserve my love. You don't have to be Ningning, femboy, BEROTOT, rajin olahraga, or anything else. You can simply be you, and that's already enough for me to love you, ya sayang ya (♡ˊ͈ ꒳ ˋ͈)</p>
+            <p>I hope you know how much I adore the little things about you too. The way you talk (literally nggak talk sih, typing), the way you call me mbul && baby 😲😲, even the random little things you probably don't think are special.</p>
+            <p>If I were there right now, I'd probably just pull you into a hug, kiss your hand and forehead, KALAU BIBIR BOLEH, MAUUU, and stay there for a very, very long time (kfc sampe pagi ya kak 🥺). Maybe I'd annoy you a little too, karena kamu lucu gemes sayangku cintaku Nona I love you.</p>
+            <p class="signature">Whenever you need some love, come back to this letter atau chat aku aja ya sayangg. I love you so, so, so much my today, tomorrow, and always. 😍😍</p>
+        </article>
+        <div class="comment-section">
+            <div class="comment-header">
+                <span class="radio-badge">TEAM RADIO</span>
+                <h3>DRIVER RESPONSE</h3>
+            </div>
+            <div class="comment-list" id="commentList-letter16"></div>
+            <div class="comment-form">
+                <textarea id="commentInput-letter16" placeholder="Type your reply to pit wall..."></textarea>
+                <div class="form-actions">
+                    <div class="profile-selector">
+                        <label class="profile-option">
+                            <input type="radio" name="profile-letter16" value="MER" checked>
+                            <span class="custom-radio mer">MER</span>
+                        </label>
+                        <label class="profile-option">
+                            <input type="radio" name="profile-letter16" value="AVE">
+                            <span class="custom-radio ave">AVE</span>
+                        </label>
+                    </div>
+                    <button class="send-comment-btn" onclick="addComment('letter16')">SEND RADIO 📡</button>
+                </div>
+            </div>
+        </div>
+        <div class="letter-navigation">
+            <button class="back-index"> < back</button>
+            <button class="next-letter" data-next="letter17">next ></button>
+        </div>
+    </div>
+</section>
+
+<!-- =========================
+     LETTER 17
+========================== -->
+<section id="letter17" class="letter-page">
+    <div class="letter-wrapper">
+        <div class="letter-top">
+            <span>17 / 26</span>
+            <span>Open when you need someone who cares</span>
+        </div>
+        <article class="paper">
+            <p class="letter-date">19/9</p>
+            <h2>HI HI HI MY LOVEE! 🙋🏻‍♀️</h2>
+            <p>What's wrong, sayangkuu? Why did you need to open this letter? Ada sesuatu yang bikin kamu gundah kahh? What's wrong, coba berkicau sama aku deh today.</p>
+            <p>Kalau ada sesuatu yang lagi berat di pikiran kamu, you don't have to keep it all yourself ya sayang. Ceritain aja, mau itu masalah besar, kecil yang bikin kesel, atau bahkan sesuatu yang kamu sendiri bingung kenapa bisa bikin kamu kepikiran.</p>
+            <p>And if you don't feel like talking about it yet, that's okay ya. You can just chtchat w me if u need someone to be with u rn.</p>
+            <p>Just remember, sayang, you have someone who genuinely cares about you. Someone who wants to know how your day went, what made you smile, what upset you, and even the random little things you think aren't important << karena pasti aku juga berkicau ke kamu even itu nggak penting yekan 🫢</p>
+            <p class="signature">So come hereee!<br>
+Tell me what's going on today ya my mine gweh ❤️❤️</p>
+        </article>
+        <div class="comment-section">
+            <div class="comment-header">
+                <span class="radio-badge">TEAM RADIO</span>
+                <h3>DRIVER RESPONSE</h3>
+            </div>
+            <div class="comment-list" id="commentList-letter17"></div>
+            <div class="comment-form">
+                <textarea id="commentInput-letter17" placeholder="Type your reply to pit wall..."></textarea>
+                <div class="form-actions">
+                    <div class="profile-selector">
+                        <label class="profile-option">
+                            <input type="radio" name="profile-letter17" value="MER" checked>
+                            <span class="custom-radio mer">MER</span>
+                        </label>
+                        <label class="profile-option">
+                            <input type="radio" name="profile-letter17" value="AVE">
+                            <span class="custom-radio ave">AVE</span>
+                        </label>
+                    </div>
+                    <button class="send-comment-btn" onclick="addComment('letter17')">SEND RADIO 📡</button>
+                </div>
+            </div>
+        </div>
+        <div class="letter-navigation">
+            <button class="back-index"> < back</button>
+            <button class="next-letter" data-next="letter18">next ></button>
+        </div>
+    </div>
+</section>
+
+<!-- =========================
+     LETTER 18
+========================== -->
+<section id="letter18" class="letter-page">
+    <div class="letter-wrapper">
+        <div class="letter-top">
+            <span>18 / 26</span>
+            <span>Open when you need encouragement</span>
+        </div>
+        <article class="paper">
+            <p class="letter-date">22/9</p>
+            <h2>HAI HAI HAIII SAYAANGG!</h2>
+            <p>HUHHH KENAPAAA, r u feeling 🤏🏻 discouraged today? Aaaa alr baca sebentar yaah, aku mau kasih kamu sedikit pep talk dari brondong tercinta mu ini 😅💕</p>
+            <p>Ya, gini ya sayang. Cermati yah, jangan masuk telinga kanan keluar telinga kiri. Apapun itu yang lagi kamu hadapi sekarang, kaya project nulis, I know it might feel difficult sampe-sampe kamu buka letter ini, but please don't immediately convince yourself that you can't do it yaa sayang. Dicoba duluu, ngga harus langsung berhasil atau sempurna kokk. I trust you sayang, I know you can do it!</p>
+            <p>And if today you didn't do as much as you wanted to, that's okay ya. Your progress doesn't become meaningless just because you had a bad day. You're still trying, you're still learning, and that's already something to be proud of __^</p>
+            <p>I know sometimes you might doubt yourself, but please remember that I believe in you. Even on the days when you don't really believe in yourself, let me believe in you for a while, ya?</p>
+            <p class="signature">Now go do your things lovee, yuk yuk semangat yaah sayang!</p>
+        </article>
+        <div class="comment-section">
+            <div class="comment-header">
+                <span class="radio-badge">TEAM RADIO</span>
+                <h3>DRIVER RESPONSE</h3>
+            </div>
+            <div class="comment-list" id="commentList-letter18"></div>
+            <div class="comment-form">
+                <textarea id="commentInput-letter18" placeholder="Type your reply to pit wall..."></textarea>
+                <div class="form-actions">
+                    <div class="profile-selector">
+                        <label class="profile-option">
+                            <input type="radio" name="profile-letter18" value="MER" checked>
+                            <span class="custom-radio mer">MER</span>
+                        </label>
+                        <label class="profile-option">
+                            <input type="radio" name="profile-letter18" value="AVE">
+                            <span class="custom-radio ave">AVE</span>
+                        </label>
+                    </div>
+                    <button class="send-comment-btn" onclick="addComment('letter18')">SEND RADIO 📡</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="letter-navigation">
+            <button class="back-index"> < back</button>
+            <button class="next-letter" data-next="letter19">next ></button>
+        </div>
+    </div>
+</section>
+
+<!-- =========================
+     LETTER 19
+========================== -->
+<section id="letter19" class="letter-page">
+    <div class="letter-wrapper">
+        <div class="letter-top">
+            <span>19 / 26</span>
+            <span>Open when you need to know how much I love you</span>
+        </div>
+        <article class="paper">
+            <p class="letter-date">22/9</p>
+            <h2>Open this! ⬇️</h2>
+<p>Baca satu-satu ya sayang, isinya kumpulan kegembiraan aku semenjak punya kamu ^_^<br>
+P1: <a href="https://medium.com/@chaieia/mang-eaaakkkk-78453c531ab8" target="_blank" rel="noopener noreferrer">https://medium.com/@chaieia/mang-eaaakkkk-78453c531ab8</a><br>
+P2: <a href="https://medium.com/@chaieia/test-2fc5fa643d9d" target="_blank" rel="noopener noreferrer">https://medium.com/@chaieia/test-2fc5fa643d9d</a></p>
+            <p class="signature">Hehe, love you sm ❤️</p>
+        </article>
+        <div class="comment-section">
+            <div class="comment-header">
+                <span class="radio-badge">TEAM RADIO</span>
+                <h3>DRIVER RESPONSE</h3>
+            </div>
+            <div class="comment-list" id="commentList-letter19"></div>
+            <div class="comment-form">
+                <textarea id="commentInput-letter19" placeholder="Type your reply to pit wall..."></textarea>
+                <div class="form-actions">
+                    <div class="profile-selector">
+                        <label class="profile-option">
+                            <input type="radio" name="profile-letter19" value="MER" checked>
+                            <span class="custom-radio mer">MER</span>
+                        </label>
+                        <label class="profile-option">
+                            <input type="radio" name="profile-letter19" value="AVE">
+                            <span class="custom-radio ave">AVE</span>
+                        </label>
+                    </div>
+                    <button class="send-comment-btn" onclick="addComment('letter19')">SEND RADIO 📡</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="letter-navigation">
+            <button class="back-index"> < back</button>
+            <button class="next-letter" data-next="letter20">next ></button>
+        </div>
+    </div>
+</section>
+
+<!-- =========================
+     LETTER 20
+========================== -->
+<section id="letter20" class="letter-page">
+    <div class="letter-wrapper">
+        <div class="letter-top">
+            <span>20 / 26</span>
+            <span>Open when you think I am upset at you</span>
+        </div>
+        <article class="paper">
+            <p class="letter-date">22/9</p>
+            <h2>Let him talk!</h2>
+            <video controls width="100%" autoplay loop muted playsinline>
+                <source src="Image/tungtung.mp4" type="video/mp4">
+            </video>
+            <p>Sayang, kenapa :(( Aku nggak upset ataupun mad samsek ke kamu sayang.. Kalau sayang pernah ngira aku mad atau upset ke kamu, ngga ya sayang, ngga pernah. Kecuali yang pas kamu jadi Fatmawati itu 🙄🙄</p>
+            <p>So don't ever think that I'm upset or mad with you cuma karena hal-hal sepele ya. Kalau ada sesuatu yang bikin aku nggak nyaman, aku pasti bilang ke kamu kok. Jadi jangan keburu mikir yang aneh-aneh dulu atau takut aku tiba-tiba marah sama kamu yaa.</p>
+        </article>
+        <div class="comment-section">
+            <div class="comment-header">
+                <span class="radio-badge">TEAM RADIO</span>
+                <h3>DRIVER RESPONSE</h3>
+            </div>
+            <div class="comment-list" id="commentList-letter20"></div>
+            <div class="comment-form">
+                <textarea id="commentInput-letter20" placeholder="Type your reply to pit wall..."></textarea>
+                <div class="form-actions">
+                    <div class="profile-selector">
+                        <label class="profile-option">
+                            <input type="radio" name="profile-letter20" value="MER" checked>
+                            <span class="custom-radio mer">MER</span>
+                        </label>
+                        <label class="profile-option">
+                            <input type="radio" name="profile-letter20" value="AVE">
+                            <span class="custom-radio ave">AVE</span>
+                        </label>
+                    </div>
+                    <button class="send-comment-btn" onclick="addComment('letter20')">SEND RADIO 📡</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="letter-navigation">
+            <button class="back-index"> < back</button>
+            <button class="next-letter" data-next="letter21">next ></button>
+        </div>
+    </div>
+</section>
+
+<!-- =========================
+     LETTER 21
+========================== -->
+<section id="letter21" class="letter-page">
+  <div class="letter-wrapper">
+    <div class="letter-top">
+      <span>21 / 26</span>
+      <span>Open when you are annoyed with me</span>
+    </div>
+    <article class="paper">
+        <p class="letter-date">22/9</p>
+      <h2>Lampiran 1</h2>
+      <img src="Image/surat.jpeg">
+      <p>Sayang maafkan ya, aku cuma bercanda :></p>
+    </article>
+    <div class="comment-section">
+      <div class="comment-header">
+        <span class="radio-badge">TEAM RADIO</span>
+        <h3>DRIVER RESPONSE</h3>
+      </div>
+      <div class="comment-list" id="commentList-letter21"></div>
+      <div class="comment-form">
+        <textarea id="commentInput-letter21" placeholder="Type your reply to pit wall..."></textarea>
+        <div class="form-actions">
+          <div class="profile-selector">
+            <label class="profile-option">
+              <input type="radio" name="profile-letter21" value="MER" checked>
+              <span class="custom-radio mer">MER</span>
+            </label>
+            <label class="profile-option">
+              <input type="radio" name="profile-letter21" value="AVE">
+              <span class="custom-radio ave">AVE</span>
+            </label>
+          </div>
+          <button class="send-comment-btn" onclick="addComment('letter21')">SEND RADIO 📡</button>
+        </div>
+      </div>
+    </div>
+        <div class="letter-navigation">
+            <button class="back-index"> < back</button>
+            <button class="next-letter" data-next="letter22">next ></button>
+        </div>
+  </div>
+</section>
+
+<!-- =========================
+     LETTER 22
+========================== -->
+<section id="letter22" class="letter-page">
+  <div class="letter-wrapper">
+    <div class="letter-top">
+      <span>22 / 26</span>
+      <span>Open when we haven't talked all day</span>
+    </div>
+    <article class="paper">
+        <p class="letter-date">22/9</p>
+      <h2>Hai mbg,</h2>
+      <p>Hari ini kita lom cerita-cerita banyak yaa ;), maaf ya sayang, akunya kalau pagi sibuk, kamunya kalau malam sibuk bobo 😅💕</p>
+      <p>Kalau hari ini sayang ngerasa ada yang kurang gitu, kayak, karena kesibukan kita berdua, maaf ya sayang. Aku pastiin besok nya kita pasti bisa ngobrol dan cerita banyak-banyak about our day and our week yaa!! :p</p>
+      <p>Aku tau kita berdua ini 11 12 banget sibuk nya, terus kalau udah gitu, ujung-ujungnya tidur jugaa. Gapapa ya sayang, kamu jangan takut akunya jadi feeling lonely karena kesibukan kita itu. Toh, aku dan kamu juga punya kehidupan masing-masing, ngga harus 24/7 available buat satu sama lain kan? Jadi sayang jangan ngerasa bersalah cuma karena hari ini kita ngga banyak ngobrol yaa.</p>
+      <p><i>Even though kita ngga chitchat seharian ini, kamu tetep jadi orang yang sama pentingnya buat aku.. 🤣😍</i></p>
+      <p>Nanti kalau sudah sama-sama free, kita sama-sama cerita-cerita ya sayang ya. And if you tired today, I hope you get to rest properly (Allah tolong jaga tidur istriku ini, amin). Kalau hari ini ternyata SERUU BANGET buat kamu, I hope you had the best time. Dan kalau hari ini bikin kamu overwhelmed (🤣🤣) semangat ya sayang, nanti ceritakan ke aku aja yaa.</p>
+      <p class="signature">Jadi sayang whenever you have time, come back to my rc yaah, kita chitchat banyak-banyak.<br>
+        Luvyuu</p>
+    </article>
+    <div class="comment-section">
+      <div class="comment-header">
+        <span class="radio-badge">TEAM RADIO</span>
+        <h3>DRIVER RESPONSE</h3>
+      </div>
+      <div class="comment-list" id="commentList-letter22"></div>
+      <div class="comment-form">
+        <textarea id="commentInput-letter22" placeholder="Type your reply to pit wall..."></textarea>
+        <div class="form-actions">
+          <div class="profile-selector">
+            <label class="profile-option">
+              <input type="radio" name="profile-letter22" value="MER" checked>
+              <span class="custom-radio mer">MER</span>
+            </label>
+            <label class="profile-option">
+              <input type="radio" name="profile-letter22" value="AVE">
+              <span class="custom-radio ave">AVE</span>
+            </label>
+          </div>
+          <button class="send-comment-btn" onclick="addComment('letter22')">SEND RADIO 📡</button>
+        </div>
+      </div>
+    </div>
+
+        <div class="letter-navigation">
+            <button class="back-index"> < back</button>
+            <button class="next-letter" data-next="letter23">next ></button>
+        </div>
+  </div>
+</section>
+
+<!-- =========================
+     LETTER 23
+========================== -->
+<section id="letter23" class="letter-page" data-letter="letter23" data-password="222232">
+  <div class="letter-wrapper">
+    <div class="letter-top">
+      <span>23 / 26</span>
+      <span>Open when we've had an argument</span>
+    </div>
+    <article class="paper">
+        <p class="letter-date">22/9</p>
+      <h2>Hai sayangku nona,<br>
+        so, we had an argument rn..? ;)</h2>
+      <p>Sayang, maybe right now you're still upset or mad with me, and also me too. Maybe there are things we haven't figured out yet, and honestly, that's okay.</p>
+<p>Sayang, aku nggak mau surat ini jadi alasan kamu buat maafin atau pura-pura semuanya nggak ada masalah di antara kita berdua. If you need time, take your time ya, that's okay. Kalau kamu masih kesel, that's okay too. Perasaan orang nggak ada yang tau, even when kita see things differently kan?</p>
+<p>Tapi tolong banget sayang, remember one thing, aku selalu ingat ini, karena ini pendirian ku:<br>
+<i>Kita lagi punya masalah, bukan kita masalahnya.</i></p>
+<p>Aku nggak mau hanya karena satu argumen bikin kamu ngerasa aku jadi nggak atau kurang sayang sama kamu, atau bikin kamu mempertanyakan semua hal baik yang pernah kita punya. Aku tetap sayang kamu sayang even kita lagi nggak satu pemikiran.</p>
+<p>Dan ini ya sayang, if I was wrong, aku harap aku bisa dengan senang hati mengakuinya ke kamu. Aku nggak mau gengsi cuma karena aku merasa punya alasan sendiri dari pembelaanku. Karena di atas semua alasan itu, kamu tetap orang yang paling aku sayang, dan aku nggak mau ego aku jadi lebih besar daripada rasa sayang aku ke kamu.</p>
+<p>Kalau dari perkataan atau perbuatan aku ada yang bikin kamu sakit hati, kesel, kecewa, nggak enak dibaca, atau bahkan bikin kamu ngerasa nggak dimengerti sama aku, maaf ya, sayang.</p>
+<p>Aku mungkin masih sering salah dalam memahami kamu. Kadang aku bisa terlalu terbawa perasaan, terlalu mikirin sesuatu dari perspektif aku sendiri, atau mungkin ada hal yang menurutku kecil tapi ternyata 🔥 buat kamu.</p>
+<p>Dan juga aku harap kita bisa taking things out and forgiving each other after an argument, also fix every argument before we sleep, so our bad days never become the reason we stop choosing each other ya?</p>
+<p>Sayang, nanti kalau kita berdua udah sama-sama mereda, let's talk about it properly, ya? Biar kitanya juga saling mengerti satu sama lainnya.</p>
+      <p class="signature">Maafkan aku ya, sayang.</p>
+    </article>
+    <div class="comment-section">
+      <div class="comment-header">
+        <span class="radio-badge">TEAM RADIO</span>
+        <h3>DRIVER RESPONSE</h3>
+      </div>
+      <div class="comment-list" id="commentList-letter23"></div>
+      <div class="comment-form">
+        <textarea id="commentInput-letter23" placeholder="Type your reply to pit wall..."></textarea>
+        <div class="form-actions">
+          <div class="profile-selector">
+            <label class="profile-option">
+              <input type="radio" name="profile-letter23" value="MER" checked>
+              <span class="custom-radio mer">MER</span>
+            </label>
+            <label class="profile-option">
+              <input type="radio" name="profile-letter23" value="AVE">
+              <span class="custom-radio ave">AVE</span>
+            </label>
+          </div>
+          <button class="send-comment-btn" onclick="addComment('letter23')">SEND RADIO 📡</button>
+        </div>
+      </div>
+    </div>
+
+        <div class="letter-navigation">
+            <button class="back-index"> < back</button>
+            <button class="next-letter" data-next="letter24">next ></button>
+        </div>
+  </div>
+</section>
+
+<!-- =========================
+     LETTER 24
+========================== -->
+<section id="letter24" class="letter-page" data-letter="letter24" data-password="302120">
+  <div class="letter-wrapper">
+    <div class="letter-top">
+      <span>24 / 26</span>
+      <span>Open when you need reassurance</span>
+    </div>
+    <article class="paper">
+        <p class="letter-date">26/9</p>
+      <h2>Hi love,</h2>
+      <p>If you're opening this, mungkin kamu lagi overthinking gara-gara suatu hal, atau kamu sekadar lagi butuh diyakinin aja sama aku. Gini ya sayang, Aku nggak tau apa yang lagi kamu pikirin sekarang, tapi kalau itu tentang kita, I hope you remember that you don't have to figure everything out by yourself. Kalau ada sesuatu yang bikin kamu nggak enak gitu, you can always talk to me about it yaa! Dannn, di surat ini, I want to remind you of how much you mean to me, sayang ;)</p>
+      <p>Aku sadar banget, kadang aku nggak selalu ada buat kamu ketika weekdays, terus malamnya juga komunikasi kita dikit sekali, soOoryy! (I'm not forcing us to communicate secara intens everyday, tapi maksudku, kayak, maaf ya aku ngilang gitu). And if one day itu pernah bikin kamu kepikiran, maaf ya sayang.</p>
+      <p>And one important thing, maaf sayaangg kalau aku rasanya kayak kurang ekspresif ke kamunya, yakinlah walau ketikan ku itu SUPER datar, tapi ada wajah semringah dibalik layar hp ku itu. Kalau mau tengok ya.. facetime 😏</p>
+      <p>Dan dengan ketikan kamu yang ini:<br>
+"sayang astg, pacarmu bukan tipe insecure yang gampang cemburu sama curut" (🤣)<br>
+Ternyata nggak valid, don't be too hard on yourself ya sayang, sampein aja ke akuu, always discussed it with mee.</p>
+<p>Oh iya, kalau suatu saat kamu butuh reassurance dari aku, bilang aja ya. Nggak perlu takut ngerasa kaya terlalu needy (kalo needy yg lain jg bleh). Aku justru lebih suka kamu cerita daripada kamu nyimpen semuanya sendiri dan akhirnya terluka atau sedih gara-gara pikiran kamu sendiri. Kalau ada yang kamu butuhin dari aku, tell me. Maybe aku nggak selalu langsung tahu harus ngapain, but I'll try!!</p>
+<p>I guess that's all I really want you to know. Whatever made you open this letter tonight, I hope setelah baca ini kamu bisa sedikit lebih apa yah, tersentuh ahk, tenang? Yang penting, kalau ada sesuatu dari aku atau kamu yang bikin pikiran jadi kacau atau gak enak, kita selalu bisa ngomongin itu dan saling ngerti pelan-pelann. You're still and always be my favourite notifications that I've been waiting for!</p>
+<p class="signature">Please remember that you don't have to carry everything by yourself, ya sayang ❤️</p>
+    </article>
+    <div class="comment-section">
+      <div class="comment-header">
+        <span class="radio-badge">TEAM RADIO</span>
+        <h3>DRIVER RESPONSE</h3>
+      </div>
+      <div class="comment-list" id="commentList-letter24"></div>
+      <div class="comment-form">
+        <textarea id="commentInput-letter24" placeholder="Type your reply to pit wall..."></textarea>
+        <div class="form-actions">
+          <div class="profile-selector">
+            <label class="profile-option">
+              <input type="radio" name="profile-letter24" value="MER" checked>
+              <span class="custom-radio mer">MER</span>
+            </label>
+            <label class="profile-option">
+              <input type="radio" name="profile-letter24" value="AVE">
+              <span class="custom-radio ave">AVE</span>
+            </label>
+          </div>
+          <button class="send-comment-btn" onclick="addComment('letter24')">SEND RADIO 📡</button>
+        </div>
+      </div>
+    </div>
+
+        <div class="letter-navigation">
+            <button class="back-index"> < back</button>
+            <button class="next-letter" data-next="letter25">next ></button>
+        </div>
+  </div>
+</section>
+
+<!-- =========================
+     LETTER 25
+========================== -->
+<section id="letter25" class="letter-page" data-letter="letter25" data-password="82038">
+  <div class="letter-wrapper">
+
+    <div class="letter-top">
+      <span>25 / 26</span>
+      <span>Open when you feel like we're drifting apart</span>
+    </div>
+    <article class="paper">
+        <p class="letter-date">26/9</p>
+      <h2>Hai sayang..,</h2>
+      <p>Whatever made you open this letter instead the others, selalu ingat kata-kata ini ya: <i>I'm not going anywhere, and my love for you hasn't faded, not even for a fraction of a second! (⁠^⁠^⁠)</i></p>
+      <p>Sayang, life can get overwhelmingly loud. Lately, the busy routines, the quiet spaces between our conversations, and the exhaustion of daily life might have made you feel like the distance between us is sooooo much growing. I'm so sorry if I make you feeling lonely while you're with me.. :<</p>
+      <p>Don't ever think about that very hard ya.., sometimes we temporarily lose our rhythm, but you are still my home, and the person I choose every single day! The foundation we built together is much stronger than a mmm pikiran jahat tentang kita yang tumbuh di pikiran aku dan kamu.</p>
+      <P>If the distance feels too heavy rn, let me bridge it. Let's stop dan buang jauh-jauh pikiran jelek yang ada and communicate it always with me, ya? Let's talk about it sampai kamu ataupun aku ataupun kita nemuin jalan terbaiknya. I always here, just as in love with you as I have always been.</P>
+      <p class="signature">With all my heart, always,<br>
+Avery.</p>
+    </article>
+    <div class="comment-section">
+      <div class="comment-header">
+        <span class="radio-badge">TEAM RADIO</span>
+        <h3>DRIVER RESPONSE</h3>
+      </div>
+      <div class="comment-list" id="commentList-letter25"></div>
+      <div class="comment-form">
+        <textarea id="commentInput-letter25" placeholder="Type your reply to pit wall..."></textarea>
+        <div class="form-actions">
+          <div class="profile-selector">
+            <label class="profile-option">
+              <input type="radio" name="profile-letter25" value="MER" checked>
+              <span class="custom-radio mer">MER</span>
+            </label>
+            <label class="profile-option">
+              <input type="radio" name="profile-letter25" value="AVE">
+              <span class="custom-radio ave">AVE</span>
+            </label>
+          </div>
+          <button class="send-comment-btn" onclick="addComment('letter25')">SEND RADIO 📡</button>
+        </div>
+      </div>
+    </div>
+
+        <div class="letter-navigation">
+            <button class="back-index"> < back</button>
+            <button class="next-letter" data-next="letter26">next ></button>
+        </div>
+  </div>
+</section>
+
+<!-- =========================
+     LETTER 26
+========================== -->
+<section id="letter26" class="letter-page">
+  <div class="letter-wrapper">
+    <div class="letter-top">
+      <span>26 / 26</span>
+      <span>Open when this is your last letter</span>
+    </div>
+    <article class="paper">
+        <p class="letter-date">29/9</p>
+      <h2>YAYY SELAMAAT!</h2>
+      <p>Akhirnya sampai juga di penghujung kumpulan letter nya ya sayang ^_^. Yaaayyy you officially reached the end of the letters yayayay!! You have opened every single letter yang aku tulis buat kamu ituu (and walked through all the distance with these little pieces of my heart in your hands) AWOWKWK</p>
+      <p>Looking back at the miles that separate us, I'm filled with so much gratitude. Distance has tested us, but it has also proved us! Everything yang kita lewati bareng-bareng selama ini udah cukup banget to show why you're worth every inch of the wait.</p>
+      <p>Actually if you wanna know gimana asal-usul web ini.. jadi gini,<BR>
+        <b>1.</b> Awalnya aku nggak ada niatan ngasih ini sebagai bagian dari hadiah mensive tau sayang, tapi karena aku nyelesainnya lamaaaa banget (lama di nulis letter nya si, hehe) jadi aku putusin buat dijadiin hadiah mensive aja :3 ini udah aku concept-in dari tanggal 10 deh..?? Lama banget kaannn, awalnya emang bukan buat mensive sayangg. But hope you like it and feel (more) comfort after read the words that I wrote from each letter yaa :p<br>
+        <b>2.</b> WKWKWKWK U KNOW WHAT, awalnya, theme letter aku mau basic aja sihh yang kaya 'Open When' letters pada umumnya. Tapi seiring berjalannya waktu, kamu lagi tergila-gila banget sama F1, jadi yeah, gini deh hasilnya (jangan kapok ngebacotin F1 ke aku ya, aku sukaa walau menghujat 😹) Maaf ya sayang kalau kurang :) Aku pun kalau project bukan bagian design ui/ux nya walau aku suka design-design gitu WKK.
+        <b>3.</b> You can see the date of penulisan tiap letter nya di atas kiri. And yea, sebenernya aku targetin buat nulis 2 letters setiap hari nya so it just takes 13 days biar web nya selesai. Tapi ya sayang, I know that I can't just rush through them cuma biar cepet selesai isi nya, because every letter has to be something that genuinely comes from my heart, kan? Aku pengen setiap letter yang kamu baca tuh bener-bener ada bagian dari aku di dalamnya, bukan cuma isi letter yang aku buat karena pengen semuanya cepat selesai. So yeah... it might take me a while, but I think I'd rather take my time and write them properly. And yaaa, there's ittt.<br>
+        <b>3.1</b> Last but not least, maaf ya sayang kalau semisal tulisanku dari tanggal awal-awal itu mungkin kayak nggak relate atau nggak terlalu serasi sama yang sekarang. Aku nulis yang awal-awal itu juga masih bener-bener di awal banget kan hehehehe :) Jadi, mungkin cara aku ngungkapinnya, atau cara aku melihat beberapa hal masih beda dari sekarang. But I hope you don't see that as something wrong yaa sayang. Because even if some letter sound different, the feeling behind them was always real ANJAY WKK.<br>
+        <b>4.</b> Dan sayang, I'm so sorry kalau heading (gatau namanya hwhwh) tiap letter ada yang nggak nyambung atau kek dipaksa.. I just wanted to make the heading of every letter selalu berbeda, so none of them would feel the same.
+<p>Even though this is the last letter to open, please remember that my love for you doesn't end here. It continues to grow every single day (^__^)</p>
+<p>Thanks for holding onto my words, for loving me, and for always being my favorite person untuk pulang.. as always. I love you so much ❤️</p>
+        <p class="signature">Selamat 2 bulan sekali lagi, Sayang</p>
+    </article>
+    <div class="comment-section">
+      <div class="comment-header">
+        <span class="radio-badge">TEAM RADIO</span>
+        <h3>DRIVER RESPONSE</h3>
+      </div>
+      <div class="comment-list" id="commentList-letter26"></div>
+      <div class="comment-form">
+        <textarea id="commentInput-letter26" placeholder="Type your reply to pit wall..."></textarea>
+        <div class="form-actions">
+          <div class="profile-selector">
+            <label class="profile-option">
+              <input type="radio" name="profile-letter26" value="MER" checked>
+              <span class="custom-radio mer">MER</span>
+            </label>
+            <label class="profile-option">
+              <input type="radio" name="profile-letter26" value="AVE">
+              <span class="custom-radio ave">AVE</span>
+            </label>
+          </div>
+          <button class="send-comment-btn" onclick="addComment('letter26')">SEND RADIO 📡</button>
+        </div>
+      </div>
+    </div>
+    
+        <div class="letter-navigation">
+            <button class="back-index"> < back</button>
+        </div>
+  </div>
+</section>
+
+<!-- =========================
+     PASSWORD 23,24, dan 25
+========================== -->
+<div id="passwordModal" class="f1-modal-overlay">
+    <div class="f1-modal-box">
+        <div class="f1-modal-header">
+            <span class="f1-badge">RESTRICTED ACCESS!</span>
+            <h2>PIT LANE LOCK</h2>
+        </div>
+        <p class="f1-modal-desc">Enter the passcode to unlock this letter!</p>
+        
+        <div class="f1-input-group">
+            <input type="password" id="modalPasswordInput" placeholder="I N P U T C O D E" autocomplete="off">
+            <span id="passwordError" class="f1-error-msg">❌ INCORRECT CODE, TRY AGAIN!</span>
+        </div>
+
+        <div class="f1-modal-actions">
+            <button type="button" id="cancelPassBtn" class="f1-btn btn-cancel">CANCEL</button>
+            <button type="button" id="submitPassBtn" class="f1-btn btn-confirm">UNLOCK</button>
+        </div>
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
